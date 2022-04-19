@@ -1,0 +1,85 @@
+package com.company.switches;
+
+import java.util.Scanner;
+
+public class switchdemo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the day number of week : ");
+        int day = scanner.nextInt();
+
+        // String dayOfWeek = getDayOfWeek(day);
+        String dayOfWeek = "";
+        switch (day) {
+            case 1:
+                dayOfWeek = "Monday";
+                break;
+            case 2:
+                dayOfWeek = "Tuesday";
+                break;
+            case 3:
+                dayOfWeek = "Wednesday";
+                break;
+            default:
+                dayOfWeek = "";
+        }
+
+        System.out.println(dayOfWeek);
+
+    }
+
+    public static String getDayOfWeek(int day) {
+        String dayOfWeek = "";
+        if (day == 1) dayOfWeek = "Monday";
+        else if (day == 2) dayOfWeek = "Tuesday";
+        else if (day == 3) dayOfWeek = "Wednesday";
+        return dayOfWeek;
+    }
+
+    public static String getDayOfWeek2(int day) {
+        String dayOfWeek = "";
+        switch (day) {
+            case 1:
+                dayOfWeek = "Monday";
+                break;
+            case 2:
+                dayOfWeek = "Tuesday";
+                break;
+            case 3:
+                dayOfWeek = "Wednesday";
+                break;
+            default:
+                dayOfWeek = "";
+        }
+        return dayOfWeek;
+    }
+
+    }
+
+
+package com.company.tests;
+
+import com.company.switches.switchdemo;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class switchdemoTest {
+
+    @Test
+   public void getDayOfWeek() {
+        assertEquals("Monday", switchdemo.getDayOfWeek(1));
+        assertEquals("Tuesday", switchdemo.getDayOfWeek(2));
+        assertEquals("Wednesday", switchdemo.getDayOfWeek(3));
+
+    }
+
+    @Test
+    public void getDayOfWeek2() {
+        assertEquals("Monday",switchdemo.getDayOfWeek2(1));
+    }
+
+}
+
+
+
